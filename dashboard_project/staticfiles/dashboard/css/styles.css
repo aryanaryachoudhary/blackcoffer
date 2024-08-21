@@ -1,0 +1,136 @@
+/* General body styles */
+body {
+    font-family: Arial, sans-serif;
+    padding: 20px;
+    background-color:rgba(10, 4, 96, 0.965); 
+    color: #333;
+    line-height: 1.6;
+    /* background-image: url('path_to_your_image');*/
+    background-size: cover; /* This will make sure the image covers the whole page */
+}
+
+/* Header styles */
+h1 {
+    font-size: 2.5em;
+    color: #87CEEB; 
+    font-family: 'Montserrat', sans-serif; 
+    margin-bottom: 30px;
+    text-align: center;
+    text-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+}
+    
+
+/* Filter container styles */
+#filters {
+    margin: 30px auto; 
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    background-color: #f7f7f7;  
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1); 
+    width: 50%; 
+    max-width: 800px;
+    font-family: 'Montserrat', sans-serif;  
+}
+
+label {
+    display: inline-block;
+    width: 100px;
+    font-weight: bold;
+    margin-right: 10px;
+    margin: 10px 0; 
+    text-align: center;
+    color: #333; 
+}
+
+input, button {
+    padding: 10px 15px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-family: 'Montserrat', sans-serif; 
+    width: 100%; /* This will make the inputs take up the full width of the #filters container */
+}
+
+button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+/* Chart container styles */
+#chart-container, #line-chart-container, #pie-chart-container, #heatmap-container, #city-year-chart-container {
+    width: 100%;
+    max-width: 960px;
+    margin: auto;
+    background-color: white;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    margin-bottom: 30px;
+    height: auto; /* Adjust this value as needed */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Montserrat', sans-serif;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    #filters {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    label, input, button {
+        width: 100%;
+        max-width: 300px;
+        margin: 5px 0;
+    }
+
+    .chart-row {
+        flex-direction: column;
+    }
+
+    .chart-row > div {
+        flex: 1 1 100%;
+    }
+}
+
+/* Flexbox for chart containers */
+.chart-row {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.chart-row > div {
+    flex: 1 1 calc(50% - 40px);
+    margin: 20px;
+}
+
+.chart-container canvas {
+    width: 100% !important;
+    height: auto !important;
+}
+
+
+/* Hover effects for buttons */
+button:hover {
+    background-color: #3e8e41;
+}
+
+/* Smooth transitions */
+* {
+    transition: all 0.3s ease;
+}

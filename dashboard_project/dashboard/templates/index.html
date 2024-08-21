@@ -1,0 +1,49 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blackcoffer Dashboard</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'dashboard/css/styles.css' %}">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://d3js.org/d3.v5.min.js"></script>
+    <script src="https://d3js.org/topojson.v3.min.js"></script>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+
+</head>
+<body>
+    <h1>Blackcoffer Dashboard</h1>
+    <div id="filters">
+        <label for="end-year">End Year</label>
+        <input type="text" id="end-year" placeholder="End Year">
+        
+        <label for="topics">Topics</label>
+        <input type="text" id="topics" placeholder="Topics">
+        
+        <label for="sector">Sector</label>
+        <input type="text" id="sector" placeholder="Sector">
+        
+        <label for="region">Region</label>
+        <input type="text" id="region" placeholder="Region">
+        
+        <button id="apply-filters">Apply Filters</button>
+    </div>
+
+    <div class="chart-row">
+        <div id="chart-container" class="chart-container">
+            <canvas id="myChart"></canvas>
+        </div>
+        <div id="line-chart-container" class="chart-container">
+            <canvas id="lineChart"></canvas>
+        </div>
+    </div>
+    <div class="chart-row">
+        <div id="pie-chart-container" class="chart-container">
+            <canvas id="pieChart"></canvas>
+        </div>
+    </div>
+    <script src="{% static 'dashboard/js/main.js' %}"></script>
+</body>
+</html>
